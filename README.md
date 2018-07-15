@@ -16,11 +16,12 @@ Application URL: [http://bookcatalog.beshir.me/](http://bookcatalog.beshir.me/).
 
 ## Configuration Steps
 
-### 1 - Create a new user named *grader* and grant this user sudo permissions.
+### 1 - Create a new user named *grader*, grant this user sudo permissions and prevent root remotely login.
 
 1. Log into the remote VM as *root* user through ssh: `$ ssh ubuntu@18.184.23.32`.
 2. Add a new user called *grader*: `$ sudo adduser grader`.
 3. Create a new file under the suoders directory: `$ sudo nano /etc/sudoers.d/grader`. Fill that newly created file with the following line of text: "grader ALL=(ALL:ALL) ALL", then save it.
+4. Prevent root remotely login, PermitRootLogin property should be set to no in /etc/ssh/sshd_config
 
 ### 2 - Update installed packages
 
